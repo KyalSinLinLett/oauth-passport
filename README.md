@@ -9,7 +9,7 @@ Implementation of OAuth2.0 in nodejs using the passport.js library
 npm install
 ```
 
-## create a keys.js file under /config
+## create a keys.js file under `/config`
 ```
 touch keys.js
 ```
