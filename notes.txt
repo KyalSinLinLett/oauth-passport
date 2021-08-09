@@ -1,0 +1,43 @@
+OAuth
+-> Open authorization
+-> Uses third party services - FB, Google, Github
+
+(1) Our site ---Sign in with Google -----> Google consent screen
+(2) Our site <----- user logs in w/ social creds ---- Google consent screen
+(3) Then store a version of their creds on our DB
+
+## THE OAuth Flow ##
+
+ Browser
+ -------
+/auth/<provider>
+   |
+   v 
+  Node
+  ----
+/auth/google handler
+   |
+   v
+OAuth Provider(GOOGLE)
+---------------------
+- grant permission - redirect
+   |
+   v
+  Node
+  ----
+- receive user details from provider
+- lookup/create user in own DB
+- create unique cookie
+  |
+  v
+ Browser 
+ -------
+- browser stores cookie
+  |
+  v
+  Node
+  ----
+ - decode cookie and retrieve user info
+
+
+ 
